@@ -15,7 +15,7 @@ help:
 	@echo "make umount\tto unmount image"
 	@echo "make list-image\tto display partition information"
 	@echo "make list-mount\tto display fs information"
-	@echo "make make-sd-image\tto generate compressed image"
+	@echo "make sd-image\tto generate compressed image"
 	@echo "make clean\tto clean all temp image files"
 
 # get raspberry image
