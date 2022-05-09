@@ -1,0 +1,19 @@
+#!/bin/bash
+# 
+# power start up
+#
+# turn power on (execute before 10 sek)
+#
+
+MODELFILE=/proc/device-tree/model
+CM4ID="Pi 3"
+echo "Starting power init script"
+echo -n "Raspberry Model: "
+cat $MODELFILE
+echo
+grep -a -q "$CM4ID" $MODELFILE
+if [[ $? -eq 0 ]] ; then
+    echo "This is a CM4"
+fi
+
+exit 0
