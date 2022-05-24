@@ -54,4 +54,3 @@ PART_END=$((PART_START + FS_SEC))
 echo "Partition start $PART_START End: $PART_END  Size: $FS_SIZE"
 
 sudo parted $SD_CARD u s resizepart 2 $PART_END
-

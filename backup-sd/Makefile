@@ -42,7 +42,10 @@ list-part:	$(TMPDIR)/sd_card.img
 	sudo parted $(SD_CARD) print ;
 
 compress-img:
-	xzcat -z -k -9 -f $(TMPDIR)/sd_part.img >$(TMPDIR)/sd_part.img.xz
+	xzcat -z -v -k -9 -f $(TMPDIR)/sd_part.img >$(TMPDIR)/sd_part.img.xz
+
+compress-card:
+	xzcat -z -v -k -9 -f $(TMPDIR)/sd_card.img >$(TMPDIR)/sd_card.img.xz
 
 clean:
 	rm $(TMPDIR)/*
