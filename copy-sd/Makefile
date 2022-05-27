@@ -1,6 +1,7 @@
 # 
 # generate sd images
 #
+
 RASPBIAN_DIR=https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07
 RASPBIAN_FILE=2022-04-04-raspios-bullseye-armhf-lite.img.xz
 # partition sizes  boot=253M  rootfs=x
@@ -26,8 +27,12 @@ start2=532480
 bstart1=4194304
 bstart2=272629760
 
-# install gparted
+make:
+	@echo "Make different images\n\n"
+	@echo "make extract-image\t extract to imagefile"
 
+
+# install gparted
 # get raspberry image
 
 tmp/raspbian.img.xz:

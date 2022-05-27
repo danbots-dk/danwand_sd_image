@@ -8,6 +8,7 @@ BOOT_FS=mnt/boot
 ROOT_FS=mnt/rootfs
 
 help:
+	@echo "Make an raspberry image including power init files\n\n"
 	@echo "Use the following commands:\n"
 	@echo "make get-image\tto download new raspbianos image"
 	@echo "make mount-image\tto mount the current immage"""""""
