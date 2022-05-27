@@ -51,10 +51,14 @@ mount-image:
 	#sudo mount -r -o loop,offset=$(bstart1) tmp/raspbian.img $(BOOT_FS)
 	sudo mount -o loop,offset=$(bstart2) tmp/raspbian.img $(ROOT_FS)
 
+mount-boot:
+	mkdir -p mnt/boot
+	sudo mount -o loop,offset=$(bstart1) tmp/raspbian.img $(BOOT_FS)
+
 umount:
 #-sudo umount $(BOOT_FS)
 	-sudo umount $(ROOT_FS)
-
+	-sudo umount $(BOOT_FS)
 list-mount:
 	#df $(BOOT_FS)
 	df $(ROOT_FS)
