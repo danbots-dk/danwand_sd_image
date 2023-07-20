@@ -5,7 +5,7 @@
 
 USER=peter
 
-SD_CARD=/dev/sdb
+SD_CARD=/dev/sda
 PART1=$(SD_CARD)1
 PART2=$(SD_CARD)2
 MAX_CARD_COUNT=1000 # 4G
@@ -19,11 +19,14 @@ help:
 	@echo "make compress-image\tCompress downloaded image"
 	@echo "make clean\tClean tmp folder"
 
+$(TMPDIR):
+	mkdir -p $(TMPDIR)
+
 $(TMPDIR)/sd_card.img:
 	sudo dd bs=4M if=$(SD_CARD) status=progress of=$(TMPDIR)/sd_card.img
 	sudo chown $(USER) of=$(TMPDIR)/sd_card.img
 
-full-backup:
+full-backup:	$(TMPDIR)
 	@echo creating full image from SD $(SD_CARD) card
 	df -h $(PART1) $(PART2)
 	sudo dd bs=4M if=$(SD_CARD) status=progress of=$(TMPDIR)/sd_card.img 
