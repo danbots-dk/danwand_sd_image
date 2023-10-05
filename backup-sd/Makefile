@@ -49,6 +49,7 @@ shrink-card:
 	../PiShrink-master/pishrink.sh -d $(TMPDIR)/sd_card.img $(TMPDIR)/sd_card_small.img
 
 shrink-compress-card:
+	rm -f $(TMPDIR)/sd_card_small.xz
 	../PiShrink-master/pishrink.sh -d -Z -a $(TMPDIR)/sd_card.img $(TMPDIR)/sd_card_small.xz
 
 clean:
