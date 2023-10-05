@@ -6,6 +6,7 @@
 USER=peter
 
 SD_CARD=/dev/sda
+#SD_CARD=/dev/sdc
 PART1=$(SD_CARD)1
 PART2=$(SD_CARD)2
 MAX_CARD_COUNT=1000 # 4G
@@ -17,6 +18,7 @@ help:
 	@echo "make backup\tBackup the partitions"
 	@echo "make list-part\tList partitions at card"
 	@echo "make compress-image\tCompress downloaded image"
+	@echo "make shrink-compress-image\tShrink and Compress downloaded image"
 	@echo "make clean\tClean tmp folder"
 
 $(TMPDIR):
