@@ -15,7 +15,6 @@ TMPDIR=tmp
 help: 
 	@echo "Backup sd-cards\n"
 	@echo "make full-backup\tTake full backup of a sd card"
-	@echo "make backup\tBackup the partitions"
 	@echo "make list-part\tList partitions at card"
 	@echo "make compress-image\tCompress downloaded image"
 	@echo "make shrink-compress-image\tShrink and Compress downloaded image"
